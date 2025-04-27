@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 
 export function RootLayout() {
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col h-screen text-zinc-800 dark:text-zinc-200">
       {/* Navbar */}
       <Navbar />
       {/* Main content with sidebars */}

@@ -35,7 +35,7 @@ const ChapterItems = () => {
             <NavLink
               key={chapter}
               to={`/chapter/${chapter.toLowerCase().replace(/\s+/g, "-")}`}
-              className="block py-1 px-6 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded text-sm"
+              className="block py-2 px-6 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded text-sm"
             >
               {chapter}
             </NavLink>
@@ -88,7 +88,7 @@ const ContentItems = () => {
             <NavLink
               key={content.name}
               to={`/content/${content.path}`}
-              className="block py-1 px-6 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded text-sm"
+              className="block py-2 px-6 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded text-sm"
             >
               {content.name}
             </NavLink>
@@ -118,7 +118,7 @@ const RenderNavItem = ({ item }: { item: NavItem }) => {
 
 const sidebar_items = [
   {
-    name: "Portfolio",
+    name: "Quick Overview",
     path: "/",
   },
   {
