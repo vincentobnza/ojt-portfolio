@@ -15,7 +15,6 @@ interface NavItem {
 }
 
 const ChapterItems = () => {
-  // Changed initial state to true to make it active/expanded by default
   const [isOpen, setIsOpen] = useState(true);
   const chapters = ["Chapter 1", "Chapter 2", "Chapter 3", "Chapter 4"];
 
@@ -34,8 +33,14 @@ const ChapterItems = () => {
           {chapters.map((chapter) => (
             <NavLink
               key={chapter}
-              to={`/chapter/${chapter.toLowerCase().replace(/\s+/g, "-")}`}
-              className="block py-2 px-6 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded text-sm"
+              to={`/${chapter.toLowerCase().replace(/\s+/g, "-")}`}
+              className={({ isActive }) =>
+                `block py-2 px-6 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded text-sm ${
+                  isActive
+                    ? "bg-zinc-100 dark:bg-gradient-to-l dark:from-zinc-900  dark:to-zinc-800 font-medium"
+                    : ""
+                }`
+              }
             >
               {chapter}
             </NavLink>
@@ -47,7 +52,6 @@ const ChapterItems = () => {
 };
 
 const ContentItems = () => {
-  // Changed initial state to true to make it active/expanded by default
   const [isOpen, setIsOpen] = useState(true);
   const contents = [
     {
@@ -87,7 +91,7 @@ const ContentItems = () => {
           {contents.map((content) => (
             <NavLink
               key={content.name}
-              to={`/content/${content.path}`}
+              to={`/${content.path}`}
               className="block py-2 px-6 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded text-sm"
             >
               {content.name}
@@ -139,7 +143,7 @@ const sidebar_items = [
 
 export function AppSidebar() {
   return (
-    <aside className="flex flex-col gap-8 justify-between w-80 bg-white dark:bg-zinc-900 relative">
+    <aside className="hidden md:flex flex-col gap-8 justify-between w-80 bg-white dark:bg-zinc-900 relative">
       <DotPatternBg />
       <div className="flex-grow p-5 overflow-y-auto relative">
         <ul className="space-y-2">

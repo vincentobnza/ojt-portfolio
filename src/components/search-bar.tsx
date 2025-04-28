@@ -9,7 +9,7 @@ export function SearchBar() {
         <Search className="h-4 w-4" />
       </div>
       <Input placeholder="Search anything here..." className="pl-8 pr-12" />
-      <div className="absolute right-2 top-1/2 transform -translate-y-1/2">
+      <div className="absolute right-[5px] top-1/2 transform -translate-y-1/2">
         <Kbd>CTRL K</Kbd>
       </div>
     </div>

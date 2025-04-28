@@ -1,9 +1,9 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* * {
+* {
   font-family: "Inria Sans", sans-serif;
-} */
+}
 
 ::-webkit-scrollbar {
   width: 6px;

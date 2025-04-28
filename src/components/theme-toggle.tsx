@@ -1,4 +1,4 @@
-import { Moon, Sun } from "lucide-react";
+import { Moon, Sun, LaptopMinimal } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -20,16 +20,22 @@ export function ThemeToggle() {
         alt="Theme Toggle Icon"
         className="size-14 absolute top-4 right-2 grayscale opacity-20"
       />
-      <p className="text-xs opacity-50 p-3">Theme Configuration</p>
+      <p className="text-xs opacity-60 p-3">Theme Configuration</p>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="ghost" className="justify-start ">
             {theme === "dark" ? (
+              <Moon className="mr-2" />
+            ) : theme === "light" ? (
               <Sun className="mr-2" />
             ) : (
-              <Moon className="mr-2" />
-            )}{" "}
-            {theme === "dark" ? "Dark Mode" : "Light Mode"}
+              <LaptopMinimal className="mr-2" />
+            )}
+            {theme === "dark"
+              ? "Dark Mode"
+              : theme === "light"
+              ? "Light Mode"
+              : "System"}
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="center" className="w-64 ">
