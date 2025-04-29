@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FeedbackDialog } from "./feedback-dialog";
+import { FeedbackDialog } from "./dialogs/feedback-dialog";
 
 export function FeedbackSection() {
   return (

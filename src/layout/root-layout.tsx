@@ -1,7 +1,7 @@
 import { AppSidebar } from "@/components/app-sidebar";
 import { Navbar } from "@/components/navbar";
 import { RightSidebar } from "@/components/right-sidebar";
-import { Outlet } from "react-router-dom";
+import { Outlet, ScrollRestoration } from "react-router-dom";
 
 export function RootLayout() {
   return (
@@ -14,6 +14,11 @@ export function RootLayout() {
         </main>
         <RightSidebar />
       </div>
+      <ScrollRestoration
+        getKey={(location, matches) => {
+          return location.key;
+        }}
+      />
     </div>
   );
 }

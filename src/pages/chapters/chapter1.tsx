@@ -2,7 +2,7 @@ import { ChaptersHeader } from "@/components/chapters-header";
 import { NextPageButton } from "@/components/next-page-button";
 import { SectionContent } from "@/components/section-content";
 
-export function Chapter1() {
+export default function Chapter1() {
   return (
     <>
       <ChaptersHeader label="Chapter 1" title="Introduction" />

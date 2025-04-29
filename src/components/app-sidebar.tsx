@@ -92,7 +92,13 @@ const ContentItems = () => {
             <NavLink
               key={content.name}
               to={`/${content.path}`}
-              className="block py-2 px-6 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded text-sm"
+              className={({ isActive }) =>
+                `block py-2 px-6 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded text-sm ${
+                  isActive
+                    ? "bg-zinc-100 dark:bg-gradient-to-l dark:from-zinc-900 dark:to-zinc-800 font-medium"
+                    : ""
+                }`
+              }
             >
               {content.name}
             </NavLink>
@@ -112,7 +118,13 @@ const RenderNavItem = ({ item }: { item: NavItem }) => {
     return (
       <NavLink
         to={item.path ?? "#"}
-        className="block py-2 px-4 text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded text-sm"
+        className={({ isActive }) =>
+          `block py-2 px-4 text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded text-sm ${
+            isActive
+              ? "bg-zinc-100 dark:bg-gradient-to-l dark:from-zinc-900 dark:to-zinc-800 font-medium"
+              : ""
+          }`
+        }
       >
         {item.name}
       </NavLink>

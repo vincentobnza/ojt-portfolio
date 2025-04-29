@@ -71,7 +71,7 @@ export function RightSidebar() {
 
   return (
     <aside className="hidden md:flex w-80 bg-white dark:bg-zinc-900 px-10 py-5">
-      <div className="h-full space-y-8 p-2">
+      <div className="w-full h-full space-y-8 p-2">
         <div className="border-b border-zinc-200 dark:border-zinc-800 pb-5">
           <h1 className="text-sm font-medium">On this Page</h1>
           {shouldShowList && pageList.length > 0 ? (
