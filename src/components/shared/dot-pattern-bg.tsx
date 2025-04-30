@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { DotPattern } from "./magicui/dot-pattern";
+import { DotPattern } from "../magicui/dot-pattern";
 
 export function DotPatternBg() {
   return (

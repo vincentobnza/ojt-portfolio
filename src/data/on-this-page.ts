@@ -10,6 +10,10 @@ export const onThisPage: PageData[] = [
     list: ["Introduction", "Table of Contents", "Appendices"],
   },
   {
+    path: "/title-page",
+    list: ["Title Page"],
+  },
+  {
     path: "/acknowledgement",
     list: ["Acknowledgement"],
   },

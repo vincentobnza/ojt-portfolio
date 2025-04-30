@@ -8,7 +8,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useTheme } from "@/components/theme-provider";
-import { DotPatternBg } from "./dot-pattern-bg";
+import { DotPatternBg } from "./shared/dot-pattern-bg";
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();

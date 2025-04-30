@@ -18,6 +18,7 @@ export default function Home() {
         />
       </div>
       <TableOfContents />
+      <Chapters />
       <Appendices />
       <NextPageButton label="Title Page" nextRoute="/title-page" />
     </section>
@@ -98,8 +99,27 @@ const TableOfContents = () => {
   );
 };
 
+const Chapters = () => {
+  return (
+    <div className="p-5 flex flex-col gap-2" id="appendices">
+      <h1 className="text-2xl font-bold">Chapters</h1>
+      <ul className="mt-5 list-disc text-sm">
+        {Array.from({ length: 4 }, (_, index) => index + 1).map((chapter) => (
+          <li
+            key={chapter}
+            className="flex items-center gap-2 text-sm py-1 underline opacity-80 hover:opacity-100 transition-all duration-200 ease-in-out cursor-pointer "
+          >
+            <ArrowUpRight size={14} />
+            <Link to={`/chapter-${chapter}`}>Chapter {chapter}</Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
 const Appendices = () => {
-  const APPENDICES_LETTERS = Array.from({ length: 26 }, (_, i) =>
+  const APPENDICES_LETTERS = Array.from({ length: 18 }, (_, i) =>
     String.fromCharCode(i + 65)
   );
   return (

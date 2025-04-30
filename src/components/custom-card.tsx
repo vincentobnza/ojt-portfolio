@@ -1,4 +1,4 @@
-import { DotPatternBg } from "./dot-pattern-bg";
+import { DotPatternBg } from "./shared/dot-pattern-bg";
 
 export function CustomCard({
   title,
@@ -11,7 +11,7 @@ export function CustomCard({
 }) {
   return (
     <div
-      className={`w-full flex flex-col justify-start items-start gap-4 p-5 bg-white rounded dark:bg-zinc-800/10 border border-zinc-200 dark:border-zinc-800 relative ${className}`}
+      className={`w-full flex flex-col justify-start items-start gap-4 p-5 bg-white rounded-sm dark:bg-zinc-800/10 border border-zinc-200 dark:border-zinc-800 relative ${className}`}
     >
       <DotPatternBg />
       <h1 className="text-xl font-bold">{title}</h1>

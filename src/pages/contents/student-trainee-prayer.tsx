@@ -29,7 +29,7 @@ const PRAYER = [
 
   "Help me to be respectful, diligent, and committed in all that I do.May I learn not just with my mind, but also with humility and integrity.Let the people I work with be kind and supportive,and may I be a blessing to them in return.",
 
-  "Lord, mold me into someone prepared for the future—responsible, skilled, and grounded in values.I offer You this journey as a student trainee,and I trust that You will lead me every step of the way.",
+  "Lord, mold me into someone prepared for the future—responsible, skilled, and grounded-sm in values.I offer You this journey as a student trainee,and I trust that You will lead me every step of the way.",
 
   "Amen",
 ];

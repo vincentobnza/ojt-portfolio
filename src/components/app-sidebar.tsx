@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { DotPatternBg } from "./dot-pattern-bg";
+import { DotPatternBg } from "./shared/dot-pattern-bg";
 import { ThemeToggle } from "./theme-toggle";
 import {
   Collapsible,
@@ -20,7 +20,7 @@ const ChapterItems = () => {
 
   return (
     <Collapsible open={isOpen} onOpenChange={setIsOpen} className="w-full">
-      <CollapsibleTrigger className="flex items-center justify-between w-full py-2 px-4 text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded text-sm">
+      <CollapsibleTrigger className="flex items-center justify-between w-full py-2 px-4 text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-sm text-sm">
         Chapters
         {isOpen ? (
           <ChevronUp className="h-4 w-4" />
@@ -35,7 +35,7 @@ const ChapterItems = () => {
               key={chapter}
               to={`/${chapter.toLowerCase().replace(/\s+/g, "-")}`}
               className={({ isActive }) =>
-                `block py-2 px-6 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded text-sm ${
+                `block py-2 px-6 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-sm text-sm ${
                   isActive
                     ? "bg-zinc-100 dark:bg-gradient-to-l dark:from-zinc-900  dark:to-zinc-800 font-medium"
                     : ""
@@ -43,6 +43,45 @@ const ChapterItems = () => {
               }
             >
               {chapter}
+            </NavLink>
+          ))}
+        </div>
+      </CollapsibleContent>
+    </Collapsible>
+  );
+};
+
+const Appendices = () => {
+  const [isOpen, setIsOpen] = useState(true);
+  const appendices = Array.from({ length: 18 }, (_, i) =>
+    String.fromCharCode(i + 65)
+  );
+
+  return (
+    <Collapsible open={isOpen} onOpenChange={setIsOpen} className="w-full">
+      <CollapsibleTrigger className="flex items-center justify-between w-full py-2 px-4 text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-sm text-sm">
+        Appendices
+        {isOpen ? (
+          <ChevronUp className="h-4 w-4" />
+        ) : (
+          <ChevronDown className="h-4 w-4" />
+        )}
+      </CollapsibleTrigger>
+      <CollapsibleContent className="pl-2">
+        <div className="mt-1 space-y-1 border-l border-zinc-200 dark:border-zinc-800 px-2">
+          {appendices.map((appendice) => (
+            <NavLink
+              key={appendice}
+              to={`/appendices/${appendice.toLowerCase()}`}
+              className={({ isActive }) =>
+                `block py-2 px-6 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-sm text-sm ${
+                  isActive
+                    ? "bg-zinc-100 dark:bg-gradient-to-l dark:from-zinc-900  dark:to-zinc-800 font-medium"
+                    : ""
+                }`
+              }
+            >
+              Appendix {appendice}
             </NavLink>
           ))}
         </div>
@@ -78,7 +117,7 @@ const ContentItems = () => {
 
   return (
     <Collapsible open={isOpen} onOpenChange={setIsOpen} className="w-full">
-      <CollapsibleTrigger className="flex items-center justify-between w-full py-2 px-4 text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded text-sm">
+      <CollapsibleTrigger className="flex items-center justify-between w-full py-2 px-4 text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-sm text-sm">
         Contents
         {isOpen ? (
           <ChevronUp className="h-4 w-4" />
@@ -93,7 +132,7 @@ const ContentItems = () => {
               key={content.name}
               to={`/${content.path}`}
               className={({ isActive }) =>
-                `block py-2 px-6 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded text-sm ${
+                `block py-2 px-6 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-sm text-sm ${
                   isActive
                     ? "bg-zinc-100 dark:bg-gradient-to-l dark:from-zinc-900 dark:to-zinc-800 font-medium"
                     : ""
@@ -114,12 +153,14 @@ const RenderNavItem = ({ item }: { item: NavItem }) => {
     return <ContentItems />;
   } else if (item.name === "Chapters") {
     return <ChapterItems />;
+  } else if (item.name === "Appendices") {
+    return <Appendices />;
   } else {
     return (
       <NavLink
         to={item.path ?? "#"}
         className={({ isActive }) =>
-          `block py-2 px-4 text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded text-sm ${
+          `block py-2 px-4 text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-sm text-sm ${
             isActive
               ? "bg-zinc-100 dark:bg-gradient-to-l dark:from-zinc-900 dark:to-zinc-800 font-medium"
               : ""
@@ -144,8 +185,11 @@ const sidebar_items = [
     name: "Chapters",
   },
   {
-    name: "E-Portfolio",
-    path: "/e-portfolio",
+    name: "Appendices",
+  },
+  {
+    name: "PDF File",
+    path: "/pdf",
   },
   {
     name: "Contact",

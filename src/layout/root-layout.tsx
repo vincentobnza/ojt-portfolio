@@ -15,8 +15,8 @@ export function RootLayout() {
         <RightSidebar />
       </div>
       <ScrollRestoration
-        getKey={(location, matches) => {
-          return location.key;
+        getKey={(location) => {
+          return location.pathname;
         }}
       />
     </div>

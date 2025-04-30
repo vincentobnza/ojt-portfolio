@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { DotPatternBg } from "./dot-pattern-bg";
+import { DotPatternBg } from "./shared/dot-pattern-bg";
 import { SearchBar } from "./search-bar";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { buttonVariants } from "@/components/ui/button";
@@ -11,7 +11,7 @@ export function Navbar() {
       <DotPatternBg />
       <div className="w-full mx-auto flex justify-between items-center">
         <div className="flex items-center gap-4 p-1">
-          <div className="size-7 grid place-items-center rounded bg-zinc-900 dark:bg-gradient-to-br dark:from-green-500 dark:to-cyan-700 text-white font-bold">
+          <div className="size-7 grid place-items-center rounded-sm bg-zinc-900 dark:bg-gradient-to-br dark:from-green-500 dark:to-cyan-700 text-white font-bold">
             V
           </div>
           <div className="flex flex-col">
@@ -22,7 +22,7 @@ export function Navbar() {
 
         <div className="flex items-center gap-4">
           <Link to="/" className={buttonVariants({ variant: "ghost" })}>
-            View E-Portfolio
+            View PDF File
             <ArrowUpRight />
           </Link>
 
