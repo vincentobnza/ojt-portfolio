@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { DotPattern } from "../magicui/dot-pattern";
 
-export function DotPatternBg() {
+export function DotPatternBg({ className }: { className?: string }) {
   return (
     <DotPattern
       width={20}
@@ -10,7 +10,8 @@ export function DotPatternBg() {
       cy={1}
       cr={1}
       className={cn(
-        "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)] p-1 "
+        "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)] p-1",
+        className
       )}
     />
   );

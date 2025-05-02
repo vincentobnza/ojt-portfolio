@@ -20,7 +20,7 @@ export function NextPageButton({
     >
       {hasPreviousPage && (
         <button
-          className="flex items-center gap-4 text-md font-medium py-6 opacity-60 hover:opacity-100 hover:text-emerald-500 transition-colors duration-200 cursor-pointer"
+          className="flex items-center gap-4 text-md font-medium py-6 opacity-60 hover:opacity-100 hover:text-violet-500 transition-colors duration-200 cursor-pointer"
           onClick={() => window.history.back()}
         >
           <ChevronLeft size={20} />
@@ -28,10 +28,10 @@ export function NextPageButton({
         </button>
       )}
       <Link
-        className="flex items-center gap-4 text-xl font-medium py-6 hover:text-emerald-500 transition-colors duration-200"
-        to={nextRoute}
+        className="flex items-center gap-4 text-xl font-medium py-6 hover:text-violet-500 transition-colors duration-200"
+        to={`/portfolio/${nextRoute}`}
       >
-        <span className="text-xs opacity-50 font-bold ">Next</span> {label}
+        <span className="text-xs opacity-50 font-medium ">Next</span> {label}
         <ChevronRight size={20} className="mt-1" />
       </Link>
     </div>

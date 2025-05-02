@@ -14,7 +14,7 @@ export default function StudentTraineePrayer() {
       </div>
 
       <NextPageButton
-        nextRoute="/personal-philosophy"
+        nextRoute="personal-philosophy"
         label="Personal Philosophy"
         hasPreviousPage={true}
       />

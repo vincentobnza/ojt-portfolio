@@ -17,7 +17,7 @@ export default function Chapter3() {
       <ImageLayout src="https://geekflare.com/wp-content/uploads/2023/03/img-placeholder.png" />
 
       <NextPageButton
-        nextRoute="/chapter-4"
+        nextRoute="chapter-4"
         label="Chapter 4"
         hasPreviousPage={true}
       />

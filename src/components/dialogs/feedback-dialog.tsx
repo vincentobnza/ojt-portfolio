@@ -33,7 +33,7 @@ export function FeedbackDialog() {
           </DialogDescription>
         </DialogHeader>
         <DialogFooter>
-          <Button type="submit" size="lg" className="w-full font-bold">
+          <Button type="submit" size="lg" className="w-full font-medium">
             <ArrowUpRight />
             Submit Feedback
           </Button>

@@ -85,8 +85,8 @@ export function RightSidebar() {
                       href={`#${id}`}
                       onClick={(e) => handleScrollToSection(e, id)}
                       className={cn(
-                        "text-zinc-700 dark:text-zinc-300 hover:text-emerald-600 dark:hover:text-emerald-400 cursor-pointer",
-                        isActive && "text-zinc-800 dark:text-zinc-100"
+                        "text-zinc-700 dark:text-zinc-300 hover:underline cursor-pointer",
+                        isActive && "text-zinc-800 dark:text-zinc-100 underline"
                       )}
                     >
                       {item}

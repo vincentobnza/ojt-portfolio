@@ -6,26 +6,48 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import {
+  ChevronDown,
+  ChevronRight,
+  Zap,
+  Rocket,
+  File,
+  Mail,
+  Layers2,
+  Table,
+  FileText,
+  Settings2,
+} from "lucide-react";
 import { useState } from "react";
 
 interface NavItem {
   name: string;
   path?: string;
+  icon?: React.ReactNode;
+  iconColor?: string;
 }
 
 const ChapterItems = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const chapters = ["Chapter 1", "Chapter 2", "Chapter 3", "Chapter 4"];
 
+  // Get the icon color from the sidebarGroups
+  const chaptersItem = sidebarGroups
+    .find((group) => group.label === "Portfolio")
+    ?.items.find((item) => item.name === "Chapters");
+  const iconColor = chaptersItem?.iconColor || "";
+
   return (
-    <Collapsible open={isOpen} onOpenChange={setIsOpen} className="w-full">
+    <Collapsible className="w-full" open={isOpen} onOpenChange={setIsOpen}>
       <CollapsibleTrigger className="flex items-center justify-between w-full py-2 px-4 text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-sm text-sm">
-        Chapters
+        <div className="flex items-center">
+          <Layers2 className={`h-4 w-4 mr-2 ${iconColor}`} />
+          Chapters
+        </div>
         {isOpen ? (
-          <ChevronUp className="h-4 w-4" />
-        ) : (
           <ChevronDown className="h-4 w-4" />
+        ) : (
+          <ChevronRight className="h-4 w-4" />
         )}
       </CollapsibleTrigger>
       <CollapsibleContent className="pl-2">
@@ -33,11 +55,11 @@ const ChapterItems = () => {
           {chapters.map((chapter) => (
             <NavLink
               key={chapter}
-              to={`/${chapter.toLowerCase().replace(/\s+/g, "-")}`}
+              to={`/portfolio/${chapter.toLowerCase().replace(/\s+/g, "-")}`}
               className={({ isActive }) =>
                 `block py-2 px-6 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-sm text-sm ${
                   isActive
-                    ? "bg-zinc-100 dark:bg-gradient-to-l dark:from-zinc-900  dark:to-zinc-800 font-medium"
+                    ? "bg-zinc-100 dark:bg-gradient-to-l dark:from-zinc-900 dark:to-zinc-800 font-medium"
                     : ""
                 }`
               }
@@ -52,19 +74,28 @@ const ChapterItems = () => {
 };
 
 const Appendices = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const appendices = Array.from({ length: 18 }, (_, i) =>
     String.fromCharCode(i + 65)
   );
 
+  // Get the icon color from the sidebarGroups
+  const appendicesItem = sidebarGroups
+    .find((group) => group.label === "Portfolio")
+    ?.items.find((item) => item.name === "Appendices");
+  const iconColor = appendicesItem?.iconColor || "";
+
   return (
     <Collapsible open={isOpen} onOpenChange={setIsOpen} className="w-full">
       <CollapsibleTrigger className="flex items-center justify-between w-full py-2 px-4 text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-sm text-sm">
-        Appendices
+        <div className="flex items-center">
+          <FileText className={`h-4 w-4 mr-2 ${iconColor}`} />
+          Appendices
+        </div>
         {isOpen ? (
-          <ChevronUp className="h-4 w-4" />
-        ) : (
           <ChevronDown className="h-4 w-4" />
+        ) : (
+          <ChevronRight className="h-4 w-4" />
         )}
       </CollapsibleTrigger>
       <CollapsibleContent className="pl-2">
@@ -72,11 +103,11 @@ const Appendices = () => {
           {appendices.map((appendice) => (
             <NavLink
               key={appendice}
-              to={`/appendices/${appendice.toLowerCase()}`}
+              to={`/portfolio/appendices/${appendice.toLowerCase()}`}
               className={({ isActive }) =>
                 `block py-2 px-6 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-sm text-sm ${
                   isActive
-                    ? "bg-zinc-100 dark:bg-gradient-to-l dark:from-zinc-900  dark:to-zinc-800 font-medium"
+                    ? "bg-zinc-100 dark:bg-gradient-to-l dark:from-zinc-900 dark:to-zinc-800 font-medium"
                     : ""
                 }`
               }
@@ -91,38 +122,47 @@ const Appendices = () => {
 };
 
 const ContentItems = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const contents = [
     {
       name: "Title Page",
-      path: "title-page",
+      path: "portfolio/title-page",
     },
     {
       name: "Acknowledgement",
-      path: "acknowledgement",
+      path: "portfolio/acknowledgement",
     },
     {
       name: "Student Trainee Prayer",
-      path: "student-trainee-prayer",
+      path: "portfolio/student-trainee-prayer",
     },
     {
       name: "Personal Philosophy",
-      path: "personal-philosophy",
+      path: "portfolio/personal-philosophy",
     },
     {
       name: "Career Plan",
-      path: "career-plan",
+      path: "portfolio/career-plan",
     },
   ];
+
+  // Get the icon color from the sidebarGroups
+  const contentsItem = sidebarGroups
+    .find((group) => group.label === "Portfolio")
+    ?.items.find((item) => item.name === "Contents");
+  const iconColor = contentsItem?.iconColor || "";
 
   return (
     <Collapsible open={isOpen} onOpenChange={setIsOpen} className="w-full">
       <CollapsibleTrigger className="flex items-center justify-between w-full py-2 px-4 text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-sm text-sm">
-        Contents
+        <div className="flex items-center">
+          <Table className={`h-4 w-4 mr-2 ${iconColor}`} />
+          Contents
+        </div>
         {isOpen ? (
-          <ChevronUp className="h-4 w-4" />
-        ) : (
           <ChevronDown className="h-4 w-4" />
+        ) : (
+          <ChevronRight className="h-4 w-4" />
         )}
       </CollapsibleTrigger>
       <CollapsibleContent className="pl-2">
@@ -148,6 +188,74 @@ const ContentItems = () => {
   );
 };
 
+const sidebarGroups = [
+  {
+    label: "General",
+    items: [
+      {
+        name: "Quick Overview",
+        path: "overview",
+        icon: <Zap className="h-4 w-4" />,
+        iconColor: "text-violet-600 dark:text-violet-400",
+      },
+      {
+        name: "Showcase",
+        path: "showcase",
+        icon: <Rocket className="h-4 w-4" strokeWidth={3} />,
+        iconColor: "text-indigo-600 dark:text-indigo-400",
+      },
+    ],
+  },
+  {
+    label: "Portfolio",
+    items: [
+      {
+        name: "Contents",
+        icon: <Table className="h-4 w-4" strokeWidth={3} />,
+        iconColor: "text-blue-600 dark:text-blue-400",
+      },
+      {
+        name: "Chapters",
+        icon: <Layers2 className="h-4 w-4" strokeWidth={3} />,
+        iconColor: "text-violet-600 dark:text-violet-400",
+      },
+      {
+        name: "Appendices",
+        icon: <FileText className="h-4 w-4" strokeWidth={3} />,
+        iconColor: "text-violet-600 dark:text-violet-400",
+      },
+    ],
+  },
+  {
+    label: "Links",
+    items: [
+      {
+        name: "PDF File",
+        path: "pdf",
+        icon: <File className="h-4 w-4" strokeWidth={3} />,
+        iconColor: "text-red-600 dark:text-red-400",
+      },
+      {
+        name: "Contact",
+        path: "contact",
+        icon: <Mail className="h-4 w-4" strokeWidth={3} />,
+        iconColor: "text-orange-600 dark:text-orange-400",
+      },
+    ],
+  },
+  {
+    label: "System",
+    items: [
+      {
+        name: "Settings",
+        path: "settings",
+        icon: <Settings2 className="h-4 w-4" strokeWidth={3} />,
+        iconColor: "text-gray-600 dark:text-white",
+      },
+    ],
+  },
+];
+
 const RenderNavItem = ({ item }: { item: NavItem }) => {
   if (item.name === "Contents") {
     return <ContentItems />;
@@ -167,48 +275,35 @@ const RenderNavItem = ({ item }: { item: NavItem }) => {
           }`
         }
       >
-        {item.name}
+        <div className="flex items-center">
+          {/* Apply the color class to the icon wrapper */}
+          <span className={item.iconColor}>{item.icon}</span>
+          <span className="ml-2">{item.name}</span>
+        </div>
       </NavLink>
     );
   }
 };
-
-const sidebar_items = [
-  {
-    name: "Quick Overview",
-    path: "/",
-  },
-  {
-    name: "Contents",
-  },
-  {
-    name: "Chapters",
-  },
-  {
-    name: "Appendices",
-  },
-  {
-    name: "PDF File",
-    path: "/pdf",
-  },
-  {
-    name: "Contact",
-    path: "/contact",
-  },
-];
 
 export function AppSidebar() {
   return (
     <aside className="hidden md:flex flex-col gap-8 justify-between w-80 bg-white dark:bg-zinc-900 relative">
       <DotPatternBg />
       <div className="flex-grow p-5 overflow-y-auto relative">
-        <ul className="space-y-2">
-          {sidebar_items.map((item) => (
-            <li key={item.name}>
-              <RenderNavItem item={item} />
-            </li>
-          ))}
-        </ul>
+        {sidebarGroups.map((group, index) => (
+          <div key={index} className="mb-6">
+            <div className="text-xs font-medium text-zinc-500 dark:text-zinc-500 uppercase tracking-wider mb-2 px-4">
+              {group.label}
+            </div>
+            <ul className="space-y-1">
+              {group.items.map((item) => (
+                <li key={item.name}>
+                  <RenderNavItem item={item} />
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
       <ThemeToggle />
     </aside>

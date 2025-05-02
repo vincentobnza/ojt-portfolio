@@ -16,7 +16,7 @@ export function SectionContent({ title, description }: SectionContentProps) {
         <div className="flex items-start gap-8">
           <div className="flex flex-col">
             <p className="text-xs dark:opacity-60 mb-2">{title}</p>
-            <h1 className="text-2xl font-bold mb-2">{title}</h1>
+            <h1 className="text-2xl font-medium mb-2">{title}</h1>
             {description && (
               <p className="text-sm dark:opacity-60 my-2">{description}</p>
             )}

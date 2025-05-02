@@ -35,7 +35,7 @@ export default function Chapter2() {
             key={index}
             className="py-1 px-2 mb-2 text-gray-700 dark:text-gray-300 flex items-center gap-3"
           >
-            <FaHashtag size={16} className="text-emerald-500" />
+            <FaHashtag size={16} className="text-violet-500" />
             {goal}
           </li>
         ))}
@@ -47,7 +47,7 @@ export default function Chapter2() {
       <SectionContent title="Organizational Chart" />
       <ImageLayout src="https://geekflare.com/wp-content/uploads/2023/03/img-placeholder.png" />
       <NextPageButton
-        nextRoute="/chapter-3"
+        nextRoute="chapter-3"
         label="Chapter 3"
         hasPreviousPage={true}
       />

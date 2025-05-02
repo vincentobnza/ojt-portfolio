@@ -123,14 +123,14 @@ export function DotPattern({
           <stop offset="100%" stopColor="currentColor" stopOpacity="0" />
         </radialGradient>
       </defs>
-      {dots.map((dot, index) => (
+      {dots.map((dot) => (
         <motion.circle
           key={`${dot.x}-${dot.y}`}
           cx={dot.x}
           cy={dot.y}
           r={cr}
           fill={glow ? `url(#${id}-gradient)` : "currentColor"}
-          className="text-transparent dark:text-emerald-500/50"
+          className="text-transparent dark:text-violet-500/50"
           initial={glow ? { opacity: 0.4, scale: 1 } : {}}
           animate={
             glow

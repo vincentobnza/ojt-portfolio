@@ -36,7 +36,7 @@ every Monday 7:00 am to 4:00 pm but Tuesday to Friday open at 8:00 in the mornin
       />
 
       <NextPageButton
-        nextRoute="/chapter-2"
+        nextRoute="chapter-2"
         label="Chapter 2"
         hasPreviousPage={true}
       />

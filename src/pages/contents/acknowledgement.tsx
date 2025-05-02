@@ -13,7 +13,7 @@ export default function Acknowledgement() {
       </div>
 
       <NextPageButton
-        nextRoute="/student-trainee-prayer"
+        nextRoute="student-trainee-prayer"
         label="Student Trainee Prayer"
         hasPreviousPage={true}
       />

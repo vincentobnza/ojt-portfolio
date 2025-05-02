@@ -3,6 +3,7 @@ import { appendicesData, Appendix } from "@/data/appendices";
 import { ChaptersHeader } from "@/components/chapters-header";
 import { ImageLayout } from "@/components/image-layout";
 import { NextPageButton } from "@/components/next-page-button";
+import { DotPatternBg } from "@/components/shared/dot-pattern-bg";
 
 export default function Appendices() {
   const { letters } = useParams<{ letters: string }>();
@@ -17,7 +18,7 @@ export default function Appendices() {
   if (!pageData) {
     return (
       <div className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold mb-4">Appendix Not Found</h1>
+        <h1 className="text-3xl font-medium mb-4">Appendix Not Found</h1>
         <p>The requested appendix does not exist.</p>
       </div>
     );
@@ -28,15 +29,17 @@ export default function Appendices() {
       <ChaptersHeader title={`Appendix ${letters.toUpperCase()}`} />
       <div className="flex flex-col items-center justify-center">
         {pageData.images.map((image, index) => (
-          <div key={index} className="mb-6 w-full max-w-4xl">
-            <ImageLayout src={image} />
-            <div className="p-5">
-              <p className="text-lg text-zinc-700 dark:text-zinc-200 text-left">
-                Figure {index + 1}:{" "}
-                <span className="text-amber-600 dark:text-amber-200 font-bold">
-                  {pageData.label}
-                </span>
-              </p>
+          <div key={index} className="mb-6 w-full">
+            <div className="w-full flex">
+              <ImageLayout src={image} className="w-full basis-3/4" />
+              <div className="basis-1/3 self-start flex flex-col gap-4 px-4  py-2 bg-white dark:bg-zinc-800/40 rounded border border-zinc-300 dark:border-zinc-700 relative">
+                <DotPatternBg />
+                <h3 className="text-sm text-zinc-700 dark:text-zinc-200 text-left opacity-70">
+                  Figure {index + 1}
+                </h3>
+
+                <p className="font-medium">{pageData.label}</p>
+              </div>
             </div>
           </div>
         ))}
@@ -57,7 +60,7 @@ export default function Appendices() {
             return (
               <NextPageButton
                 hasPreviousPage={true}
-                nextRoute={`/appendices/${nextAppendix.path}`}
+                nextRoute={`appendices/${nextAppendix.path}`}
                 label={`Appendix ${nextAppendix.path.toUpperCase()}`}
               />
             );

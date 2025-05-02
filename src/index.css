@@ -1,10 +1,14 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@import url("https://fonts.googleapis.com/css2?family=Paytone+One&display=swap");
 * {
-  font-family: "Inria Sans", sans-serif;
+  font-family: "Outfit", sans-serif;
 }
 
+.paytone {
+  font-family: "Paytone One", sans-serif;
+}
 ::-webkit-scrollbar {
   width: 6px;
 }

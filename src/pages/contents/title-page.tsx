@@ -9,7 +9,7 @@ export default function TitlePage() {
       <ChaptersHeader title="Title Page" />
       <ImageLayout src={SamplePhoto} isBordered={false} />
       <NextPageButton
-        nextRoute="/acknowledgement"
+        nextRoute="acknowledgement"
         label="Acknowledgement"
         hasPreviousPage={true}
       />

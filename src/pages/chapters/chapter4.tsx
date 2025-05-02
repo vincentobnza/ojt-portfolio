@@ -14,7 +14,7 @@ export default function Chapter4() {
       <ImageLayout src="https://geekflare.com/wp-content/uploads/2023/03/img-placeholder.png" />
 
       <NextPageButton
-        nextRoute="/appendices"
+        nextRoute="appendices/a"
         label="Appendices"
         hasPreviousPage={true}
       />

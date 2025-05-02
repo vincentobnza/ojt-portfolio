@@ -21,7 +21,7 @@ export default function PersonalPhilosophy() {
       </div>
 
       <NextPageButton
-        nextRoute="/career-plan"
+        nextRoute="career-plan"
         label="Career Plan"
         hasPreviousPage={true}
       />

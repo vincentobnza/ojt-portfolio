@@ -20,7 +20,7 @@ export default function Home() {
       <TableOfContents />
       <Chapters />
       <Appendices />
-      <NextPageButton label="Title Page" nextRoute="/title-page" />
+      <NextPageButton label="Showcase" nextRoute="showcase" />
     </section>
   );
 }
@@ -32,7 +32,7 @@ const Header = () => {
         <div className="flex items-start gap-8">
           <ImageWrapper url={Profile} alt="profile" />
           <div className="flex flex-col">
-            <h1 className="text-2xl font-bold">
+            <h1 className="text-2xl font-medium">
               Hello, I am Vincent Obenza 👋
             </h1>
 
@@ -41,11 +41,11 @@ const Header = () => {
             </p>
 
             <div className="flex mt-5 gap-3">
-              <Button className="text-xs font-bold h-7">
+              <Button className="text-xs font-medium h-7">
                 <ArrowUpRight />
                 View Resume
               </Button>
-              <Button className="text-xs font-bold h-7" variant="outline">
+              <Button className="text-xs font-medium h-7" variant="outline">
                 <Mail />
                 Email Me
               </Button>
@@ -82,7 +82,7 @@ const TableOfContents = () => {
   ];
   return (
     <div className="p-5 flex flex-col gap-2" id="table-of-contents">
-      <h1 className="text-2xl font-bold">Table of Contents</h1>
+      <h1 className="text-2xl font-medium">Table of Contents</h1>
       <ul className="mt-5 list-disc text-sm">
         {TABLE_OF_CONTENTS.map((item) => (
           <>
@@ -102,7 +102,7 @@ const TableOfContents = () => {
 const Chapters = () => {
   return (
     <div className="p-5 flex flex-col gap-2" id="appendices">
-      <h1 className="text-2xl font-bold">Chapters</h1>
+      <h1 className="text-2xl font-medium">Chapters</h1>
       <ul className="mt-5 list-disc text-sm">
         {Array.from({ length: 4 }, (_, index) => index + 1).map((chapter) => (
           <li
@@ -124,9 +124,9 @@ const Appendices = () => {
   );
   return (
     <div className="p-5 flex flex-col gap-2" id="appendices">
-      <h1 className="text-2xl font-bold">Appendices</h1>
+      <h1 className="text-2xl font-medium">Appendices</h1>
       <ul className="mt-5 list-disc text-sm">
-        {APPENDICES_LETTERS.map((letter, index) => (
+        {APPENDICES_LETTERS.map((letter) => (
           <li
             key={letter}
             className="flex items-center gap-2 text-sm py-1 underline opacity-80 hover:opacity-100 transition-all duration-200 ease-in-out cursor-pointer "

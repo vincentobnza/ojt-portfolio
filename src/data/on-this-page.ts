@@ -6,27 +6,37 @@ export interface PageData {
 
 export const onThisPage: PageData[] = [
   {
-    path: "/",
+    path: "/portfolio",
     list: ["Introduction", "Table of Contents", "Appendices"],
   },
   {
-    path: "/title-page",
+    path: "/portfolio/showcase",
+    list: [
+      "Web Programming Skills",
+      "Other Programming Skills",
+      "Design Tools",
+      "Microsoft Tools",
+      "Programming Certificates",
+    ],
+  },
+  {
+    path: "/portfolio/title-page",
     list: ["Title Page"],
   },
   {
-    path: "/acknowledgement",
+    path: "/portfolio/acknowledgement",
     list: ["Acknowledgement"],
   },
   {
-    path: "/student-trainee-prayer",
+    path: "/portfolio/student-trainee-prayer",
     list: ["Student Trainee Prayer"],
   },
   {
-    path: "/personal-philosophy",
+    path: "/portfolio/personal-philosophy",
     list: ["Personal Philosophy"],
   },
   {
-    path: "/chapter-1",
+    path: "/portfolio/chapter-1",
     list: [
       "Importance of the Internship",
       "Objectives of the OJT",
@@ -34,7 +44,7 @@ export const onThisPage: PageData[] = [
     ],
   },
   {
-    path: "/chapter-2",
+    path: "/portfoliochapter-2",
     list: [
       "Nature of the Agency",
       "Mission and Vision",
@@ -44,7 +54,7 @@ export const onThisPage: PageData[] = [
     ],
   },
   {
-    path: "/chapter-3",
+    path: "/portfolio/chapter-3",
     list: [
       "Accomplishment Report",
       "Daily Time Record",
@@ -53,7 +63,7 @@ export const onThisPage: PageData[] = [
     ],
   },
   {
-    path: "/chapter-4",
+    path: "/portfolio/chapter-4",
     list: ["Student Intership Evaluation Form"],
   },
 ];
