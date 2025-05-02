@@ -1,6 +1,6 @@
-import { ChaptersHeader } from "@/components/chapters-header";
-import { ImageLayout } from "@/components/image-layout";
-import { NextPageButton } from "@/components/next-page-button";
+import { ChaptersHeader } from "@/components/shared/chapters-header";
+import { ImageLayout } from "@/components/shared/image-layout";
+import { NextPageButton } from "@/components/shared/next-page-button";
 import { SectionContent } from "@/components/section-content";
 
 export default function Chapter3() {

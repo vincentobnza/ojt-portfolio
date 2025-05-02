@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom";
 import { FaRegMoon } from "react-icons/fa";
-import { useTheme } from "@/components/theme-provider";
+import { useTheme } from "@/components/theme/theme-provider";
 import { Button } from "@/components/ui/button";
-import GridPatternBg from "@/components/grid-pattern-bg";
+import GridPatternBg from "@/components/shared/grid-pattern-bg";
 import Memoji from "@/assets/memoji.png";
 import { motion } from "framer-motion";
 import { IoSunnySharp } from "react-icons/io5";

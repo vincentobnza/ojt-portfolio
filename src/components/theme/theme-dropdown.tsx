@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Check, ChevronsUpDown, Moon, Sun, Laptop } from "lucide-react";
-import { useTheme } from "@/components/theme-provider";
+import { useTheme } from "@/components/theme/theme-provider";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";

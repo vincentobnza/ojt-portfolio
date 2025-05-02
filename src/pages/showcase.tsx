@@ -1,5 +1,5 @@
-import { ChaptersHeader } from "@/components/chapters-header";
-import { NextPageButton } from "@/components/next-page-button";
+import { ChaptersHeader } from "@/components/shared/chapters-header";
+import { NextPageButton } from "@/components/shared/next-page-button";
 import { SectionContent } from "@/components/section-content";
 import {
   FaReact,
@@ -24,7 +24,7 @@ import {
   PiMicrosoftPowerpointLogo,
   PiMicrosoftOutlookLogo,
 } from "react-icons/pi";
-import { Container } from "@/components/container";
+import { Container } from "@/components/shared/container";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
 

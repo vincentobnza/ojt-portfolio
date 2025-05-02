@@ -1,6 +1,6 @@
-import { ChaptersHeader } from "@/components/chapters-header";
-import { NextPageButton } from "@/components/next-page-button";
-import Paragraph from "@/components/paragraph";
+import { ChaptersHeader } from "@/components/shared/chapters-header";
+import { NextPageButton } from "@/components/shared/next-page-button";
+import Paragraph from "@/components/shared/paragraph";
 
 export default function StudentTraineePrayer() {
   return (

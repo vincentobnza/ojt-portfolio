@@ -1,12 +1,12 @@
 import { CarouselImage } from "@/components/carousel-image";
-import { ChaptersHeader } from "@/components/chapters-header";
-import { CustomCard } from "@/components/custom-card";
-import { GridWrapper } from "@/components/grid-wrapper";
-import { NextPageButton } from "@/components/next-page-button";
+import { ChaptersHeader } from "@/components/shared/chapters-header";
+import { CustomCard } from "@/components/shared/custom-card";
+import { GridWrapper } from "@/components/shared/grid-wrapper";
+import { NextPageButton } from "@/components/shared/next-page-button";
 import { SectionContent } from "@/components/section-content";
 import { FaHashtag } from "react-icons/fa";
 import { AgencyInfoDialog } from "@/components/dialogs/agency-info-dialog";
-import { ImageLayout } from "@/components/image-layout";
+import { ImageLayout } from "@/components/shared/image-layout";
 
 export default function Chapter2() {
   return (

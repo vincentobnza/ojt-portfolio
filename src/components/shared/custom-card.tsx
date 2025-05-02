@@ -1,4 +1,4 @@
-import { DotPatternBg } from "./shared/dot-pattern-bg";
+import { DotPatternBg } from "./dot-pattern-bg";
 
 export function CustomCard({
   title,

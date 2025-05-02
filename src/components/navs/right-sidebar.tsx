@@ -1,8 +1,8 @@
 import { useLocation } from "react-router-dom";
-import { onThisPage, PageData } from "../data/on-this-page";
+import { onThisPage, PageData } from "../../data/on-this-page";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
-import { FeedbackSection } from "./feedback-section";
+import { FeedbackSection } from "../feedback-section";
 
 export function RightSidebar() {
   const location = useLocation();

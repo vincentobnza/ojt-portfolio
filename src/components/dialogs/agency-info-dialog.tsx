@@ -8,7 +8,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { ArrowUpRight } from "lucide-react";
-import Paragraph from "../paragraph";
+import Paragraph from "../shared/paragraph";
 
 export function AgencyInfoDialog() {
   return (

@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
-import { DotPatternBg } from "./shared/dot-pattern-bg";
-import { ThemeToggle } from "./theme-toggle";
+import { DotPatternBg } from "../shared/dot-pattern-bg";
+import { ThemeToggle } from "../theme/theme-toggle";
 import {
   Collapsible,
   CollapsibleContent,

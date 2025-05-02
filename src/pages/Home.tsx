@@ -1,11 +1,11 @@
-import { Container } from "@/components/container";
+import { Container } from "@/components/shared/container";
 import Profile from "../assets/profile.jpg";
 import { ImageWrapper } from "@/components/image-wrapper";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight, Mail } from "lucide-react";
 import { SectionContent } from "@/components/section-content";
 import { Link } from "react-router-dom";
-import { NextPageButton } from "@/components/next-page-button";
+import { NextPageButton } from "@/components/shared/next-page-button";
 
 export default function Home() {
   return (

@@ -3,7 +3,7 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
-import { ThemeProvider } from "./components/theme-provider";
+import { ThemeProvider } from "./components/theme/theme-provider";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "./services/queryClient";
 import { createBrowserRouter } from "react-router-dom";
@@ -31,7 +31,7 @@ const Chapter4 = lazy(() => import("./pages/chapters/chapter4"));
 
 // NOT FOUND PAGE
 
-const NotFound = lazy(() => import("./components/not-found"));
+const NotFound = lazy(() => import("./components/shared/not-found"));
 
 const router = createBrowserRouter(
   createRoutesFromElements(

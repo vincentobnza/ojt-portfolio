@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
 import { appendicesData, Appendix } from "@/data/appendices";
-import { ChaptersHeader } from "@/components/chapters-header";
-import { ImageLayout } from "@/components/image-layout";
-import { NextPageButton } from "@/components/next-page-button";
+import { ChaptersHeader } from "@/components/shared/chapters-header";
+import { ImageLayout } from "@/components/shared/image-layout";
+import { NextPageButton } from "@/components/shared/next-page-button";
 import { DotPatternBg } from "@/components/shared/dot-pattern-bg";
 
 export default function Appendices() {

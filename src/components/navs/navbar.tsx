@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
-import { DotPatternBg } from "./shared/dot-pattern-bg";
-import { SearchBar } from "./search-bar";
+import { DotPatternBg } from "../shared/dot-pattern-bg";
+import { SearchBar } from "../search-bar";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { buttonVariants } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";

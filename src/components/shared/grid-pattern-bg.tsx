@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { GridPattern } from "./magicui/grid-pattern";
+import { GridPattern } from "../magicui/grid-pattern";
 
 export default function GridPatternBg() {
   return (

@@ -1,6 +1,6 @@
-import { AppSidebar } from "@/components/app-sidebar";
-import { Navbar } from "@/components/navbar";
-import { RightSidebar } from "@/components/right-sidebar";
+import { AppSidebar } from "@/components/navs/app-sidebar";
+import { Navbar } from "@/components/navs/navbar";
+import { RightSidebar } from "@/components/navs/right-sidebar";
 import { Outlet, ScrollRestoration } from "react-router-dom";
 
 export function RootLayout() {

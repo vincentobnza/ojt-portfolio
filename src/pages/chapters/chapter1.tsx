@@ -1,5 +1,5 @@
-import { ChaptersHeader } from "@/components/chapters-header";
-import { NextPageButton } from "@/components/next-page-button";
+import { ChaptersHeader } from "@/components/shared/chapters-header";
+import { NextPageButton } from "@/components/shared/next-page-button";
 import { SectionContent } from "@/components/section-content";
 
 export default function Chapter1() {
