@@ -1,4 +1,3 @@
-import { FontStyleDropdown } from "@/components/font-style-dropdown";
 import { SectionContent } from "@/components/shared/section-content";
 import { ThemeDropdown } from "@/components/theme/theme-dropdown";
 
@@ -14,7 +13,6 @@ export default function Settings() {
         <div className="w-full border-b border-zinc-200 dark:border-zinc-800"></div>
       </div>
       <ThemeSettings />
-      <FontSettings />
     </section>
   );
 }
@@ -28,20 +26,6 @@ const ThemeSettings = () => {
       </div>
       <div>
         <ThemeDropdown />
-      </div>
-    </div>
-  );
-};
-
-const FontSettings = () => {
-  return (
-    <div className="w-full p-5 flex justify-between items-center gap-8">
-      <div className="flex flex-col">
-        <h1 className="text-lg mb-1 font-medium">Font Style Settings</h1>
-        <p className="opacity-60">Customize your preferred font style.</p>
-      </div>
-      <div>
-        <FontStyleDropdown />
       </div>
     </div>
   );
