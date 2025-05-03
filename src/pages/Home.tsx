@@ -3,7 +3,7 @@ import Profile from "../assets/profile.jpg";
 import { ImageWrapper } from "@/components/image-wrapper";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight, Mail } from "lucide-react";
-import { SectionContent } from "@/components/section-content";
+import { SectionContent } from "@/components/shared/section-content";
 import { Link } from "react-router-dom";
 import { NextPageButton } from "@/components/shared/next-page-button";
 

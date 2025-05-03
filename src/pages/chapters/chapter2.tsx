@@ -3,7 +3,7 @@ import { ChaptersHeader } from "@/components/shared/chapters-header";
 import { CustomCard } from "@/components/shared/custom-card";
 import { GridWrapper } from "@/components/shared/grid-wrapper";
 import { NextPageButton } from "@/components/shared/next-page-button";
-import { SectionContent } from "@/components/section-content";
+import { SectionContent } from "@/components/shared/section-content";
 import { FaHashtag } from "react-icons/fa";
 import { AgencyInfoDialog } from "@/components/dialogs/agency-info-dialog";
 import { ImageLayout } from "@/components/shared/image-layout";

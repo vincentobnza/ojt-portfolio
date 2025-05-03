@@ -1,5 +1,5 @@
 import { FontStyleDropdown } from "@/components/font-style-dropdown";
-import { SectionContent } from "@/components/section-content";
+import { SectionContent } from "@/components/shared/section-content";
 import { ThemeDropdown } from "@/components/theme/theme-dropdown";
 
 export default function Settings() {

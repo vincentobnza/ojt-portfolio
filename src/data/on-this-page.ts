@@ -6,7 +6,7 @@ export interface PageData {
 
 export const onThisPage: PageData[] = [
   {
-    path: "/portfolio",
+    path: "/portfolio/overview",
     list: ["Introduction", "Table of Contents", "Appendices"],
   },
   {
