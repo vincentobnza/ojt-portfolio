@@ -8,22 +8,20 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useTheme } from "@/components/theme/theme-provider";
-import { DotPatternBg } from "../shared/dot-pattern-bg";
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
   return (
-    <div className="flex flex-col  border-t border-t-zinc-100 dark:border-zinc-800 p-2 relative">
-      <DotPatternBg />
+    <div className="relative p-4">
       <img
         src="https://cdn-icons-png.flaticon.com/128/12180/12180724.png"
         alt="Theme Toggle Icon"
-        className="size-14 absolute top-4 right-2 grayscale opacity-20"
+        className="size-10 absolute top-5 right-5 grayscale opacity-20"
       />
-      <p className="text-xs opacity-60 p-3">Theme Configuration</p>
+      <p className="text-xs opacity-60  pb-2 pl-4">Theme Configuration</p>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant="ghost" className="justify-start ">
+          <Button variant="ghost" className="justify-start w-full">
             {theme === "dark" ? (
               <Moon className="mr-2" />
             ) : theme === "light" ? (
@@ -38,7 +36,7 @@ export function ThemeToggle() {
               : "System"}
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent align="center" className="w-64 ">
+        <DropdownMenuContent align="center" className="w-64">
           <DropdownMenuItem onClick={() => setTheme("light")}>
             Light
           </DropdownMenuItem>

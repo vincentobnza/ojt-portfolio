@@ -113,7 +113,7 @@ const Hero = () => {
         </motion.h1>
 
         <motion.p
-          className="dark:opacity-70 text-lg font-semibold"
+          className="dark:opacity-70 text-lg"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 0.7, y: 0 }}
           transition={{ delay: 1.5, duration: 0.8 }}

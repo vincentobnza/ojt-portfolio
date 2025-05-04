@@ -86,7 +86,7 @@ const TableOfContents = () => {
       <ul className="mt-5 list-disc text-sm">
         {TABLE_OF_CONTENTS.map((item) => (
           <>
-            <Link to={item.path} key={item.name}>
+            <Link to={`/portfolio${item.path}`} key={item.name}>
               <li className="flex items-center gap-2 text-sm py-1 underline opacity-80 hover:opacity-100 transition-all duration-200 ease-in-out cursor-pointer ">
                 <ArrowUpRight size={14} />
                 {item.name}
@@ -110,7 +110,7 @@ const Chapters = () => {
             className="flex items-center gap-2 text-sm py-1 underline opacity-80 hover:opacity-100 transition-all duration-200 ease-in-out cursor-pointer "
           >
             <ArrowUpRight size={14} />
-            <Link to={`/chapter-${chapter}`}>Chapter {chapter}</Link>
+            <Link to={`/portfolio/chapter-${chapter}`}>Chapter {chapter}</Link>
           </li>
         ))}
       </ul>
@@ -132,7 +132,7 @@ const Appendices = () => {
             className="flex items-center gap-2 text-sm py-1 underline opacity-80 hover:opacity-100 transition-all duration-200 ease-in-out cursor-pointer "
           >
             <ArrowUpRight size={14} />
-            <Link to={`/appendix-${letter.toLowerCase()}`}>
+            <Link to={`/portfolio/appendix-${letter.toLowerCase()}`}>
               Appendix {letter}
             </Link>
           </li>

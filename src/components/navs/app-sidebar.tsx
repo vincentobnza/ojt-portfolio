@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import { DotPatternBg } from "../shared/dot-pattern-bg";
 import { ThemeToggle } from "../theme/theme-toggle";
 import {
   Collapsible,
@@ -7,7 +6,6 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import {
-  ChevronDown,
   ChevronRight,
   Zap,
   Rocket,
@@ -19,6 +17,8 @@ import {
   Settings2,
 } from "lucide-react";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { DotPatternBg } from "../shared/dot-pattern-bg";
 
 interface NavItem {
   name: string;
@@ -44,30 +44,56 @@ const ChapterItems = () => {
           <Layers2 className={`h-4 w-4 mr-2 ${iconColor}`} />
           Chapters
         </div>
-        {isOpen ? (
-          <ChevronDown className="h-4 w-4" />
-        ) : (
+        <motion.div
+          animate={{ rotate: isOpen ? 90 : 0 }}
+          transition={{ duration: 0.2 }}
+        >
           <ChevronRight className="h-4 w-4" />
-        )}
+        </motion.div>
       </CollapsibleTrigger>
       <CollapsibleContent className="pl-2">
-        <div className="mt-1 space-y-1 border-l border-zinc-200 dark:border-zinc-800 px-2">
-          {chapters.map((chapter) => (
-            <NavLink
-              key={chapter}
-              to={`/portfolio/${chapter.toLowerCase().replace(/\s+/g, "-")}`}
-              className={({ isActive }) =>
-                `block py-2 px-6 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-sm text-sm ${
-                  isActive
-                    ? "bg-zinc-100 dark:bg-gradient-to-l dark:from-zinc-900 dark:to-zinc-800 font-medium"
-                    : ""
-                }`
-              }
-            >
-              {chapter}
-            </NavLink>
-          ))}
-        </div>
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{
+            opacity: isOpen ? 1 : 0,
+            height: isOpen ? "auto" : 0,
+          }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className="mt-1 space-y-1 border-l border-zinc-200 dark:border-zinc-800 px-2"
+        >
+          <AnimatePresence mode="wait">
+            <motion.div layout className="space-y-1">
+              {chapters.map((chapter, index) => (
+                <motion.div
+                  key={chapter}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{
+                    delay: 0.2 * index,
+                    type: "spring",
+                    stiffness: 100,
+                  }}
+                >
+                  <NavLink
+                    to={`/portfolio/${chapter
+                      .toLowerCase()
+                      .replace(/\s+/g, "-")}`}
+                    className={({ isActive }) =>
+                      `block py-2 px-6 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-sm text-sm ${
+                        isActive
+                          ? "bg-zinc-100 dark:bg-gradient-to-l dark:from-zinc-900 dark:to-zinc-800 font-medium"
+                          : ""
+                      }`
+                    }
+                  >
+                    {chapter}
+                  </NavLink>
+                </motion.div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
+        </motion.div>
       </CollapsibleContent>
     </Collapsible>
   );
@@ -79,7 +105,6 @@ const Appendices = () => {
     String.fromCharCode(i + 65)
   );
 
-  // Get the icon color from the sidebarGroups
   const appendicesItem = sidebarGroups
     .find((group) => group.label === "Portfolio")
     ?.items.find((item) => item.name === "Appendices");
@@ -92,30 +117,55 @@ const Appendices = () => {
           <FileText className={`h-4 w-4 mr-2 ${iconColor}`} />
           Appendices
         </div>
-        {isOpen ? (
-          <ChevronDown className="h-4 w-4" />
-        ) : (
+        <motion.div
+          animate={{ rotate: isOpen ? 90 : 0 }}
+          transition={{ duration: 0.2 }}
+        >
           <ChevronRight className="h-4 w-4" />
-        )}
+        </motion.div>
       </CollapsibleTrigger>
       <CollapsibleContent className="pl-2">
-        <div className="mt-1 space-y-1 border-l border-zinc-200 dark:border-zinc-800 px-2">
-          {appendices.map((appendice) => (
-            <NavLink
-              key={appendice}
-              to={`/portfolio/appendices/${appendice.toLowerCase()}`}
-              className={({ isActive }) =>
-                `block py-2 px-6 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-sm text-sm ${
-                  isActive
-                    ? "bg-zinc-100 dark:bg-gradient-to-l dark:from-zinc-900 dark:to-zinc-800 font-medium"
-                    : ""
-                }`
-              }
-            >
-              Appendix {appendice}
-            </NavLink>
-          ))}
-        </div>
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{
+            opacity: isOpen ? 1 : 0,
+            height: isOpen ? "auto" : 0,
+          }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className="mt-1 space-y-1 border-l border-zinc-200 dark:border-zinc-800 px-2"
+        >
+          <AnimatePresence mode="wait">
+            <motion.div layout className="space-y-1">
+              {appendices.map((appendice, index) => (
+                <motion.div
+                  key={appendice}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{
+                    delay: 0.2 * index,
+                    type: "spring",
+                    stiffness: 100,
+                  }}
+                >
+                  <NavLink
+                    key={appendice}
+                    to={`/portfolio/appendices/${appendice.toLowerCase()}`}
+                    className={({ isActive }) =>
+                      `block py-2 px-6 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-sm text-sm ${
+                        isActive
+                          ? "bg-zinc-100 dark:bg-gradient-to-l dark:from-zinc-900 dark:to-zinc-800 font-medium"
+                          : ""
+                      }`
+                    }
+                  >
+                    Appendix {appendice}
+                  </NavLink>
+                </motion.div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
+        </motion.div>
       </CollapsibleContent>
     </Collapsible>
   );
@@ -159,30 +209,54 @@ const ContentItems = () => {
           <Table className={`h-4 w-4 mr-2 ${iconColor}`} />
           Contents
         </div>
-        {isOpen ? (
-          <ChevronDown className="h-4 w-4" />
-        ) : (
+        <motion.div
+          animate={{ rotate: isOpen ? 90 : 0 }}
+          transition={{ duration: 0.2 }}
+        >
           <ChevronRight className="h-4 w-4" />
-        )}
+        </motion.div>
       </CollapsibleTrigger>
       <CollapsibleContent className="pl-2">
-        <div className="mt-1 space-y-1 border-l border-zinc-200 dark:border-zinc-800 px-2">
-          {contents.map((content) => (
-            <NavLink
-              key={content.name}
-              to={`/${content.path}`}
-              className={({ isActive }) =>
-                `block py-2 px-6 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-sm text-sm ${
-                  isActive
-                    ? "bg-zinc-100 dark:bg-gradient-to-l dark:from-zinc-900 dark:to-zinc-800 font-medium"
-                    : ""
-                }`
-              }
-            >
-              {content.name}
-            </NavLink>
-          ))}
-        </div>
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{
+            opacity: isOpen ? 1 : 0,
+            height: isOpen ? "auto" : 0,
+          }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className="mt-1 space-y-1 border-l border-zinc-200 dark:border-zinc-800 px-2"
+        >
+          <AnimatePresence mode="wait">
+            <motion.div layout className="space-y-1">
+              {contents.map((content, index) => (
+                <motion.div
+                  key={content.name}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{
+                    delay: 0.2 * index,
+                    type: "spring",
+                    stiffness: 100,
+                  }}
+                >
+                  <NavLink
+                    to={`/${content.path}`}
+                    className={({ isActive }) =>
+                      `block py-2 px-6 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-sm text-sm ${
+                        isActive
+                          ? "bg-zinc-100 dark:bg-gradient-to-l dark:from-zinc-900 dark:to-zinc-800 font-medium"
+                          : ""
+                      }`
+                    }
+                  >
+                    {content.name}
+                  </NavLink>
+                </motion.div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
+        </motion.div>
       </CollapsibleContent>
     </Collapsible>
   );
@@ -287,9 +361,9 @@ const RenderNavItem = ({ item }: { item: NavItem }) => {
 
 export function AppSidebar() {
   return (
-    <aside className="hidden md:flex flex-col gap-8 justify-between w-80 bg-white dark:bg-zinc-900 relative">
-      <DotPatternBg />
+    <aside className="fixed top-0 left-0 h-screen pt-16 hidden md:block w-80 bg-white dark:bg-zinc-900 z-10 overflow-y-auto">
       <div className="flex-grow p-5 overflow-y-auto relative">
+        <DotPatternBg />
         {sidebarGroups.map((group, index) => (
           <div key={index} className="mb-6">
             <div className="text-xs font-medium text-zinc-500 dark:text-zinc-500 uppercase tracking-wider mb-2 px-4">
@@ -305,7 +379,9 @@ export function AppSidebar() {
           </div>
         ))}
       </div>
-      <ThemeToggle />
+      <div className="w-80 z-10 mt-auto fixed left-0 bottom-0 bg-white dark:bg-zinc-900">
+        <ThemeToggle />
+      </div>
     </aside>
   );
 }

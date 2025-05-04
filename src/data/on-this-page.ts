@@ -20,6 +20,10 @@ export const onThisPage: PageData[] = [
     ],
   },
   {
+    path: "/portfolio/settings",
+    list: ["Theme Settings"],
+  },
+  {
     path: "/portfolio/title-page",
     list: ["Title Page"],
   },
@@ -44,7 +48,7 @@ export const onThisPage: PageData[] = [
     ],
   },
   {
-    path: "/portfoliochapter-2",
+    path: "/portfolio/chapter-2",
     list: [
       "Nature of the Agency",
       "Mission and Vision",

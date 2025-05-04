@@ -1,5 +1,4 @@
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
 
 export function ImageLayout({
   src,
@@ -21,11 +20,7 @@ export function ImageLayout({
           className
         )}
       >
-        <motion.img
-          initial={{ opacity: 0, filter: "blur(10px)" }}
-          whileInView={{ opacity: 1, filter: "blur(0px)" }}
-          transition={{ duration: 0.5 }}
-          loading="lazy"
+        <img
           src={src}
           alt="omsc"
           className="w-full h-full transition-all duration-300 object-cover"

@@ -29,8 +29,6 @@ const Chapter2 = lazy(() => import("./pages/chapters/chapter2"));
 const Chapter3 = lazy(() => import("./pages/chapters/chapter3"));
 const Chapter4 = lazy(() => import("./pages/chapters/chapter4"));
 
-// NOT FOUND PAGE
-
 const NotFound = lazy(() => import("./components/shared/not-found"));
 
 const router = createBrowserRouter(

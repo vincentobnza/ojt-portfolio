@@ -7,15 +7,15 @@ import { ArrowUpRight } from "lucide-react";
 
 export function Navbar() {
   return (
-    <nav className="bg-white dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800 border p-2 relative px-8">
+    <header className="sticky top-0 z-20 w-full h-16 border-b border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 grid place-items-center">
       <DotPatternBg />
-      <div className="w-full mx-auto flex justify-between items-center">
+      <div className="w-full max-w-screen-2xl mx-auto flex justify-between items-center px-8">
         <NavLink to="/" className="flex items-center gap-4 p-1">
           <div className="size-7 grid place-items-center rounded-sm bg-zinc-900 dark:bg-gradient-to-br dark:from-violet-500 dark:to-cyan-700 text-white font-medium">
             V
           </div>
           <div className="flex flex-col">
-            <h1 className="font-medium">OJT | Portfolio</h1>
+            <h1 className="font-medium">OJT | PORTFOLIO</h1>
             <p className="text-xs opacity-50">Vincent Obenza</p>
           </div>
         </NavLink>
@@ -35,6 +35,6 @@ export function Navbar() {
           </Link>
         </div>
       </div>
-    </nav>
+    </header>
   );
 }

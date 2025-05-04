@@ -7,22 +7,22 @@ import { PageLoading } from "@/components/page-loading";
 
 export function RootLayout() {
   return (
-    <div className="flex flex-col h-screen text-zinc-800 dark:text-zinc-200">
+    <div className="flex flex-col min-h-screen text-zinc-800 dark:text-zinc-200">
       <Navbar />
-      <div className="flex flex-1 overflow-hidden">
+
+      <div className="flex flex-1 relative">
         <AppSidebar />
-        <main className="flex-1 overflow-auto py-2 px-12">
+
+        <main className="flex-1 md:mx-[360px] overflow-y-auto p-2">
           <Suspense fallback={<PageLoading />}>
             <Outlet />
           </Suspense>
         </main>
+
         <RightSidebar />
       </div>
-      <ScrollRestoration
-        getKey={(location) => {
-          return location.pathname;
-        }}
-      />
+
+      <ScrollRestoration />
     </div>
   );
 }
