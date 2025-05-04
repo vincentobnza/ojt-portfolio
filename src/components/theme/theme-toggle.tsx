@@ -18,7 +18,7 @@ export function ThemeToggle() {
         alt="Theme Toggle Icon"
         className="size-10 absolute top-5 right-5 grayscale opacity-20"
       />
-      <p className="text-xs opacity-60  pb-2 pl-4">Theme Configuration</p>
+      <p className="text-xs dark:opacity-60  pb-2 pl-4">Theme</p>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="ghost" className="justify-start w-full">

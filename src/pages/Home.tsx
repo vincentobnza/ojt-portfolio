@@ -28,11 +28,11 @@ export default function Home() {
 const Header = () => {
   return (
     <Container>
-      <div className="flex w-full justify-between  gap-5">
-        <div className="flex items-start gap-8">
+      <div className="w-full">
+        <div className="flex flex-col md:flex-row items-start gap-5 md:gap-8">
           <ImageWrapper url={Profile} alt="profile" />
-          <div className="flex flex-col">
-            <h1 className="text-2xl font-medium">
+          <div className="flex flex-col items-start text-left">
+            <h1 className="text-xl sm:text-2xl font-medium mt-4 md:mt-0">
               Hello, I am Vincent Obenza 👋
             </h1>
 
@@ -40,13 +40,13 @@ const Header = () => {
               Bachelor of Science in Information Technology
             </p>
 
-            <div className="flex mt-5 gap-3">
+            <div className="flex mt-3 md:mt-5 gap-3">
               <Button className="text-xs font-medium h-7">
-                <ArrowUpRight />
+                <ArrowUpRight className="mr-1" size={14} />
                 View Resume
               </Button>
               <Button className="text-xs font-medium h-7" variant="outline">
-                <Mail />
+                <Mail className="mr-1" size={14} />
                 Email Me
               </Button>
             </div>
@@ -82,7 +82,7 @@ const TableOfContents = () => {
   ];
   return (
     <div className="p-5 flex flex-col gap-2" id="table-of-contents">
-      <h1 className="text-2xl font-medium">Table of Contents</h1>
+      <h1 className="text-xl md:text-2xl font-medium">Table of Contents</h1>
       <ul className="mt-5 list-disc text-sm">
         {TABLE_OF_CONTENTS.map((item) => (
           <>
@@ -102,7 +102,7 @@ const TableOfContents = () => {
 const Chapters = () => {
   return (
     <div className="p-5 flex flex-col gap-2" id="appendices">
-      <h1 className="text-2xl font-medium">Chapters</h1>
+      <h1 className="text-xl md:text-2xl font-medium">Chapters</h1>
       <ul className="mt-5 list-disc text-sm">
         {Array.from({ length: 4 }, (_, index) => index + 1).map((chapter) => (
           <li
@@ -124,7 +124,7 @@ const Appendices = () => {
   );
   return (
     <div className="p-5 flex flex-col gap-2" id="appendices">
-      <h1 className="text-2xl font-medium">Appendices</h1>
+      <h1 className="text-xl md:text-2xl font-medium">Appendices</h1>
       <ul className="mt-5 list-disc text-sm">
         {APPENDICES_LETTERS.map((letter) => (
           <li

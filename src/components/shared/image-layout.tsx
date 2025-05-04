@@ -15,7 +15,7 @@ export function ImageLayout({
     <div className="px-5 space-y-4">
       <div
         className={cn(
-          "w-3/4 h-[9in]",
+          "w-full md:w-3/4 h-[500px] md:h-[9in]",
           isBordered ? "p-2 bg-zinc-200 dark:bg-zinc-700" : "",
           className
         )}

@@ -12,7 +12,7 @@ const Paragraph: React.FC<ParagraphProps> = ({
   variant = "default",
 }) => {
   const variantStyles = {
-    default: "text-base font-normal",
+    default: "text-sm md:text-base font-normal",
     small: "text-sm font-normal",
     large: "text-lg font-normal",
   };

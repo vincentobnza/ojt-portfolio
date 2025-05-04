@@ -76,7 +76,7 @@ const Hero = () => {
           <img src={Memoji} alt="profile" className="size-40 mx-auto" />
         </motion.div>
         <motion.h1
-          className="text-5xl paytone leading-snug text-zinc-800 dark:text-violet-50 mb-10"
+          className="text-4xl md:text-5xl paytone leading-snug text-zinc-800 dark:text-violet-50 mb-10"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
@@ -90,7 +90,7 @@ const Hero = () => {
             WELCOME TO MY{" "}
           </motion.span>
           <motion.span
-            className="text-violet-700 dark:text-violet-400 text-5xl paytone"
+            className="text-violet-500 dark:text-violet-400 text-4xl md:text-5xl paytone"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{
