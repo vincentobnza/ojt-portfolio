@@ -55,9 +55,4 @@ export default function Chapter2() {
   );
 }
 
-const Goals = [
-  "To continually increase access to quality education;",
-  "To ensure a high completion rate of students admitted in respective programs;",
-  "To improve the adequacy of facilities and infrastructure that is in line with specified regulations and requirements;",
-  "To progressively increase internal research funding and dissemination of research findings that positively impact communities;",
-];
+const Goals = [""];

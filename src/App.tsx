@@ -7,11 +7,12 @@ import { ThemeProvider } from "./components/theme/theme-provider";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "./services/queryClient";
 import { createBrowserRouter } from "react-router-dom";
-import Home from "./pages/home";
 import { RootLayout } from "./layout/root-layout";
 import { lazy } from "react";
 import Index from "./pages";
 // ROUTES
+
+const Home = lazy(() => import("./pages/home"));
 const ShowCase = lazy(() => import("./pages/showcase"));
 const Settings = lazy(() => import("./pages/settings"));
 const TitlePage = lazy(() => import("./pages/contents/title-page"));
