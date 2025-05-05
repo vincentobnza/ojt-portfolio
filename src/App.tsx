@@ -12,7 +12,7 @@ import { lazy } from "react";
 import Index from "./pages";
 // ROUTES
 
-const Home = lazy(() => import("./pages/home"));
+const Home = lazy(() => import("./pages/home.tsx"));
 const ShowCase = lazy(() => import("./pages/showcase"));
 const Settings = lazy(() => import("./pages/settings"));
 const TitlePage = lazy(() => import("./pages/contents/title-page"));
