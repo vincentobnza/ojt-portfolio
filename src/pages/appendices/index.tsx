@@ -27,11 +27,11 @@ export default function Appendices() {
   return (
     <>
       <ChaptersHeader title={`Appendix ${letters.toUpperCase()}`} />
-      <div className="flex flex-col items-center justify-center">
+      <div className="w-full flex flex-col items-center justify-center">
         {pageData.images.map((image, index) => (
-          <div key={index} className="mb-6 w-full">
+          <div key={index} className="mb-6 w-ful">
             <div className="w-full flex">
-              <ImageLayout src={image} className="w-full basis-3/4" />
+              <ImageLayout src={image} className="w-full h-[350px]" />
               <div className="basis-1/3 self-start flex flex-col gap-4 px-4  py-2 bg-white dark:bg-zinc-800/40 rounded border border-zinc-300 dark:border-zinc-700 relative">
                 <DotPatternBg />
                 <h3 className="text-sm text-zinc-700 dark:text-zinc-200 text-left opacity-70">

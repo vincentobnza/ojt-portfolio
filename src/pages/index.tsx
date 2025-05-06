@@ -66,7 +66,7 @@ const Navbar = () => {
 const Hero = () => {
   return (
     <section className="w-full max-w-screen-xl mx-auto flex justify-center items-center px-10">
-      <div className="max-w-lg mx-auto text-center flex flex-col gap-3">
+      <div className="max-w-screen-sm mx-auto text-center flex flex-col gap-3">
         <motion.div
           className="p-1 bg-zinc-100 dark:bg-zinc-800 self-center rounded-full relative"
           initial={{ filter: "blur(10px)", opacity: 0 }}
@@ -100,7 +100,7 @@ const Hero = () => {
               stiffness: 100,
             }}
           >
-            PORTFOLIO,{" "}
+            INTERNSHIP,{" "}
           </motion.span>
           <motion.span
             className="paytone"
@@ -108,12 +108,12 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 1.1, duration: 0.7 }}
           >
-            FRIEND{" "}
+            PORTFOLIO{" "}
           </motion.span>
         </motion.h1>
 
         <motion.p
-          className="dark:opacity-70 text-lg"
+          className="w-3/4 mx-auto dark:opacity-70 text-lg"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 0.7, y: 0 }}
           transition={{ delay: 1.5, duration: 0.8 }}

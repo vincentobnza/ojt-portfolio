@@ -1,7 +1,7 @@
 import { ChaptersHeader } from "@/components/shared/chapters-header";
 import { ImageLayout } from "@/components/shared/image-layout";
 import { NextPageButton } from "@/components/shared/next-page-button";
-import SamplePhoto from "@/assets/sample_photo(41).png";
+import SamplePhoto from "@/assets/FRONT-PAGE.png";
 
 export default function TitlePage() {
   return (

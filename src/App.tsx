@@ -7,11 +7,12 @@ import { ThemeProvider } from "./components/theme/theme-provider";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "./services/queryClient";
 import { createBrowserRouter } from "react-router-dom";
-import Home from "./pages/home";
 import { RootLayout } from "./layout/root-layout";
 import { lazy } from "react";
 import Index from "./pages";
 // ROUTES
+
+const HomePage = lazy(() => import("./pages/homepage"));
 const ShowCase = lazy(() => import("./pages/showcase"));
 const Settings = lazy(() => import("./pages/settings"));
 const TitlePage = lazy(() => import("./pages/contents/title-page"));
@@ -36,7 +37,7 @@ const router = createBrowserRouter(
     <>
       <Route index element={<Index />} />
       <Route path="/portfolio" element={<RootLayout />}>
-        <Route path="overview" index element={<Home />} />
+        <Route path="overview" index element={<HomePage />} />
         <Route path="showcase" element={<ShowCase />} />
         <Route path="settings" element={<Settings />} />
         <Route path="acknowledgement" element={<Acknowledgement />} />
