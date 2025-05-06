@@ -294,7 +294,7 @@ const ProgrammngCertificates = () => {
             alt="award"
             className="hidden md:flex absolute top-2 right-4 w-24 opacity-50"
           />
-          <h1 className="text-md md:text-xl font-medium mb-3">
+          <h1 className="text-sm md:text-xl font-medium mb-3">
             Champion of the Web Designing - IT Day 2024
           </h1>
           <p className="text-xs md:text-sm opacity-70">

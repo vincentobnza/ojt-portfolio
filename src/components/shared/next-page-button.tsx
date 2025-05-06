@@ -20,7 +20,7 @@ export function NextPageButton({
     >
       {hasPreviousPage && (
         <button
-          className="hidden md:flex items-center gap-4 text-md font-medium py-6 opacity-60 hover:opacity-100 hover:text-violet-500 transition-colors duration-200 cursor-pointer"
+          className="hidden md:flex items-center gap-4 text-sm font-medium py-6 opacity-60 hover:opacity-100 hover:text-violet-500 transition-colors duration-200 cursor-pointer"
           onClick={() => window.history.back()}
         >
           <ChevronLeft size={20} />
