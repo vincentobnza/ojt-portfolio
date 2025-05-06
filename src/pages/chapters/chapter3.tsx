@@ -7,7 +7,7 @@ import { Calendar } from "lucide-react";
 import DTR from "@/assets/dtr.png";
 import DTR2 from "@/assets/dtr2.png";
 import IAR from "@/assets/iar.png";
-import IPR from "@/assets/ipr.png";
+import IPR from "@/assets/IPR.png";
 export default function Chapter3() {
   return (
     <>
