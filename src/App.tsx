@@ -10,8 +10,8 @@ import { createBrowserRouter } from "react-router-dom";
 import { RootLayout } from "./layout/root-layout";
 import { lazy } from "react";
 import Index from "./pages";
-// ROUTES
 
+// APP ROUTES
 const HomePage = lazy(() => import("./pages/homepage"));
 const ShowCase = lazy(() => import("./pages/showcase"));
 const Settings = lazy(() => import("./pages/settings"));

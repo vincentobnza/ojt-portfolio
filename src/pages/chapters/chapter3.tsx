@@ -6,12 +6,10 @@ import { accomplishments } from "@/data/accomplishment";
 import { Calendar } from "lucide-react";
 
 export default function Chapter3() {
-  const time_record = [];
   return (
     <>
       <ChaptersHeader label="Chapter 3" title="Work Experiences" />
       <SectionContent title="Accomplishment Report" />
-
       <TableReport />
       <SectionContent title="Daily Time Record" />
       <ImageLayout src="https://geekflare.com/wp-content/uploads/2023/03/img-placeholder.png" />
