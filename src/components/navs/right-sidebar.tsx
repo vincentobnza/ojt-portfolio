@@ -1,8 +1,10 @@
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { onThisPage, PageData } from "@/data/on-this-page";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
-import { FeedbackSection } from "../feedback-section";
+
+import { ArrowUpRight, SquareArrowUp } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
 
 export function RightSidebar() {
   const location = useLocation();
@@ -71,8 +73,8 @@ export function RightSidebar() {
 
   return (
     <aside className="fixed top-0 right-0 h-screen hidden md:block w-80 bg-white dark:bg-zinc-900 z-10 overflow-y-auto p-6">
-      <div className="mt-15 w-full  space-y-8 p-2">
-        <div className="border-b border-zinc-200 dark:border-zinc-800 pb-5">
+      <div className="mt-15 w-full  space-y-8 p-4">
+        <div className="pb-5 border-b border-zinc-200 dark:border-zinc-800">
           <h1 className="text-sm font-medium">On this Page</h1>
           {shouldShowList && pageList.length > 0 ? (
             <ul className="mt-5 text-sm space-y-3">
@@ -85,8 +87,8 @@ export function RightSidebar() {
                       href={`#${id}`}
                       onClick={(e) => handleScrollToSection(e, id)}
                       className={cn(
-                        "text-zinc-700 dark:text-zinc-300 hover:underline cursor-pointer",
-                        isActive && "text-zinc-800 dark:text-zinc-100 underline"
+                        "text-zinc-700 dark:text-zinc-300 dark:hover:text-white cursor-pointer",
+                        isActive && "text-zinc-800 dark:text-zinc-300 font-bold"
                       )}
                     >
                       {item}
@@ -105,8 +107,64 @@ export function RightSidebar() {
           )}
         </div>
 
-        <FeedbackSection />
+        {/* <FeedbackSection /> */}
+
+        <div className="space-y-4">
+          <Link
+            to="https://github.com/vincentobnza/ojt-portfolio"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm flex items-center gap-2 text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white"
+          >
+            Give me stars on GitHub
+            <ArrowUpRight className="h-4 w-4" />
+          </Link>
+          <ScrollToTop />
+        </div>
       </div>
     </aside>
   );
 }
+
+const ScrollToTop = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.scrollY > 100) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", toggleVisibility);
+    return () => window.removeEventListener("scroll", toggleVisibility);
+  }, []);
+
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    handleScrollToTop();
+  };
+
+  return (
+    <AnimatePresence mode="wait">
+      {isVisible && (
+        <motion.button
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          className="text-sm flex items-center gap-2 cursor-pointer"
+          onClick={handleClick}
+        >
+          <SquareArrowUp className="h-4 w-4" />
+          Scroll to Top
+        </motion.button>
+      )}
+    </AnimatePresence>
+  );
+};

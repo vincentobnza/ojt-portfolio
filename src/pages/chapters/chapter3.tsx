@@ -4,7 +4,10 @@ import { NextPageButton } from "@/components/shared/next-page-button";
 import { SectionContent } from "@/components/shared/section-content";
 import { accomplishments } from "@/data/accomplishment";
 import { Calendar } from "lucide-react";
-
+import DTR from "@/assets/dtr.png";
+import DTR2 from "@/assets/dtr2.png";
+import IAR from "@/assets/iar.png";
+import IPR from "@/assets/ipr.png";
 export default function Chapter3() {
   return (
     <>
@@ -12,11 +15,12 @@ export default function Chapter3() {
       <SectionContent title="Accomplishment Report" />
       <TableReport />
       <SectionContent title="Daily Time Record" />
-      <ImageLayout src="https://geekflare.com/wp-content/uploads/2023/03/img-placeholder.png" />
+      <ImageLayout src={DTR} />
+      <ImageLayout src={DTR2} />
       <SectionContent title="Internship Progress Report" />
-      <ImageLayout src="https://geekflare.com/wp-content/uploads/2023/03/img-placeholder.png" />
+      <ImageLayout src={IPR} />
       <SectionContent title="Internship Analysis Report " />
-      <ImageLayout src="https://geekflare.com/wp-content/uploads/2023/03/img-placeholder.png" />
+      <ImageLayout src={IAR} />
 
       <NextPageButton
         nextRoute="chapter-4"

@@ -5,10 +5,12 @@ import { Outlet, ScrollRestoration } from "react-router-dom";
 import { Suspense } from "react";
 import { PageLoading } from "@/components/page-loading";
 import { motion } from "framer-motion";
+import { Toaster } from "@/components/ui/sonner";
 
 export function RootLayout() {
   return (
     <div className="flex flex-col min-h-screen text-zinc-800 dark:text-zinc-200">
+      <Toaster />
       <Navbar />
       <div className="flex flex-1 relative">
         <AppSidebar />

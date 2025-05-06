@@ -10,11 +10,11 @@ import {
   Zap,
   Rocket,
   File,
-  Mail,
   Layers2,
   Table,
   FileText,
   Settings2,
+  FileUser,
 } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -305,15 +305,15 @@ const sidebarGroups = [
     items: [
       {
         name: "PDF File",
-        path: "pdf",
+        path: "https://drive.google.com/file/d/1jlkobDJjz5-cl6Fsbkc19x8diVOxJsBE/view?usp=sharing",
         icon: <File className="h-4 w-4" strokeWidth={3} />,
         iconColor: "text-sky-600 dark:text-sky-400",
       },
       {
-        name: "Contact",
-        path: "contact",
-        icon: <Mail className="h-4 w-4" strokeWidth={3} />,
-        iconColor: "text-blue-600 dark:text-blue-400",
+        name: "Resume",
+        path: "https://drive.google.com/file/d/1jos6cxLTnXnjlcOuDfMKgMHzfE4MX5XT/view?usp=sharing",
+        icon: <FileUser className="h-4 w-4" strokeWidth={3} />,
+        iconColor: "text-violet-600 dark:text-violet-400",
       },
     ],
   },

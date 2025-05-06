@@ -14,7 +14,7 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-20 w-full h-16 border-b border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 grid place-items-center">
+    <header className="sticky top-0 z-20 w-full h-16 border-b border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 backdrop-blur-xl grid place-items-center">
       <DotPatternBg />
       <div className="w-full max-w-screen-2xl mx-auto flex justify-between items-center px-6 md:px-8">
         <div className="flex items-center gap-8">
@@ -38,16 +38,19 @@ export function Navbar() {
         </div>
 
         <div className="hidden md:flex items-center gap-4">
-          <Link to="/" className={buttonVariants({ variant: "ghost" })}>
+          <Link
+            to="https://drive.google.com/file/d/1jlkobDJjz5-cl6Fsbkc19x8diVOxJsBE/view?usp=sharing"
+            className={buttonVariants({ variant: "ghost" })}
+          >
             View PDF File
             <ArrowUpRight />
           </Link>
 
           <SearchBar />
-          <Link to="/">
+          <Link to="https://github.com/vincentobnza">
             <FaGithub size={25} />
           </Link>
-          <Link to="/">
+          <Link to="https://www.linkedin.com/in/vincent-obenza-761b472a3/">
             <FaLinkedin size={25} />
           </Link>
         </div>

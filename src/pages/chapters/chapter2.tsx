@@ -45,11 +45,11 @@ export default function Chapter2() {
       </ul>
       <SectionContent title="History Background of the Agency with Pictures" />
 
-      <div className="p-5">
+      <div className="p-5 space-y-8">
         <img src={AgencyImage} alt="agency" className="w-full h-[450px]" />
-      </div>
 
-      <AgencyInfoDialog />
+        <AgencyInfoDialog />
+      </div>
 
       <SectionContent title="Organizational Chart" />
       <div className="p-5">

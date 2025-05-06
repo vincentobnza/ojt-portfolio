@@ -39,6 +39,11 @@ export const onThisPage: PageData[] = [
     path: "/portfolio/personal-philosophy",
     list: ["Personal Philosophy"],
   },
+
+  {
+    path: "/portfolio/career-plan",
+    list: ["Career Plan"],
+  },
   {
     path: "/portfolio/chapter-1",
     list: [
@@ -69,5 +74,80 @@ export const onThisPage: PageData[] = [
   {
     path: "/portfolio/chapter-4",
     list: ["Student Intership Evaluation Form"],
+  },
+
+  // APPENDICES
+
+  {
+    path: "/portfolio/appendices/a",
+    list: ["Evaluation Form (Registrar’s Office)"],
+  },
+  {
+    path: "/portfolio/appendices/b",
+    list: ["Photocopy Registration Form"],
+  },
+  {
+    path: "/portfolio/appendices/c",
+    list: ["Photocopy Validated ID"],
+  },
+  {
+    path: "/portfolio/appendices/d",
+    list: ["Parent's Consent"],
+  },
+  {
+    path: "/portfolio/appendices/e",
+    list: ["Medical Certificate"],
+  },
+  {
+    path: "/portfolio/appendices/f",
+    list: ["Certificate of Good Moral Character"],
+  },
+  {
+    path: "/portfolio/appendices/g",
+    list: ["Application Letter"],
+  },
+  {
+    path: "/portfolio/appendices/h",
+    list: ["Endorsement Letter"],
+  },
+  {
+    path: "/portfolio/appendices/i",
+    list: ["Memorandum of Agreement (MOA) - SCHOOL AGENCY (NO DATA)"],
+  },
+  {
+    path: "/portfolio/appendices/j",
+    list: ["Daily Time Record (Time Card)"],
+  },
+  {
+    path: "/portfolio/appendices/k",
+    list: ["Certificate of Completion"],
+  },
+  {
+    path: "/portfolio/appendices/l",
+    list: ["Certificate of Clearance"],
+  },
+  {
+    path: "/portfolio/appendices/m",
+    list: ["Performance/Proficiency Rating Sheet"],
+  },
+  {
+    path: "/portfolio/appendices/n",
+    list: ["Pictures During Pre-Service Seminar"],
+  },
+  {
+    path: "/portfolio/appendices/o",
+    list: ["Pictures During Office Works"],
+  },
+  {
+    path: "/portfolio/appendices/p",
+    list: ["Code of Ethics for CAST Student Internship"],
+  },
+  {
+    path: "/portfolio/appendices/q",
+    list: ["Curriculum Vitae"],
+  },
+  {
+    path: "/portfolio/appendices/r",
+    list: ["On-The-Job Training Portfolio Evaluation Form"],
   },
 ];
